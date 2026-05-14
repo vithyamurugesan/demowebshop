@@ -21,33 +21,32 @@ public class RegisterPage {
     }
 
     @FindBy(xpath = "//a[@class='ico-register']")
-    private WebElement registerLink;
+    public WebElement registerLink;
 
     @FindBy(id = "FirstName")
-    private WebElement firstNameField;
+    public WebElement firstNameField;
 
     @FindBy(id = "LastName")
-    private WebElement lastNameField;
+    public WebElement lastNameField;
 
     @FindBy(id = "Email")
-    private WebElement emailField;
+    public WebElement emailField;
 
     @FindBy(id = "Password")
-    private WebElement passwordField;
+    public WebElement passwordField;
 
     @FindBy(id = "ConfirmPassword")
-    private WebElement confirmPasswordField;
+    public WebElement confirmPasswordField;
 
     @FindBy(id = "register-button")
-    private WebElement registerButton;
+    public WebElement registerButton;
 
-    // Shown after successful new registration
     @FindBy(xpath = "//div[@class='result']")
-    private WebElement registrationSuccessMessage;
+    public WebElement registrationSuccessMessage;
 
     // Shown for existing email (server-side error)
     @FindBy(xpath = "//div[contains(@class,'message-error')]//li")
-    private WebElement serverErrorMessage;
+    public WebElement serverErrorMessage;
 
     public void clickRegisterLink() {
         wait.until(ExpectedConditions.elementToBeClickable(registerLink));

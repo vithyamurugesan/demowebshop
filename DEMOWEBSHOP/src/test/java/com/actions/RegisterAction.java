@@ -1,10 +1,12 @@
 package com.actions;
 
 import com.pages.RegisterPage;
+
 import org.openqa.selenium.WebDriver;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+
 
 public class RegisterAction {
 
@@ -16,11 +18,7 @@ public class RegisterAction {
         registerPage = new RegisterPage(driver);
     }
 
-    /**
-     * Generates a unique email using current timestamp.
-     * Format: vithya_20260514_120530@testmail.com
-     * Guaranteed unique on every run — no manual change needed.
-     */
+
     private String generateUniqueEmail() {
         String timestamp = LocalDateTime.now()
                 .format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
@@ -31,9 +29,7 @@ public class RegisterAction {
         registerPage.clickRegisterLink();
     }
 
-    /**
-     * Overrides the email from the feature file with a fresh unique email every run.
-     */
+ 
     public void enterValidRegistrationDetails(String firstName, String lastName,
                                                String email, String password,
                                                String confirmPassword) {
@@ -51,7 +47,7 @@ public class RegisterAction {
                                                     String confirmPassword) {
         registerPage.enterFirstName(firstName);
         registerPage.enterLastName(lastName);
-        registerPage.enterEmail(email);         // uses fixed already-registered email
+        registerPage.enterEmail(email);         
         registerPage.enterPassword(password);
         registerPage.enterConfirmPassword(confirmPassword);
     }

@@ -8,7 +8,7 @@ import org.openqa.selenium.WebDriver;
 
 public class Hooks {
 
-
+    
     public static WebDriver getDriver() {
         return HelperClass.getDriver();
     }
